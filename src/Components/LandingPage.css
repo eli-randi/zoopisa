@@ -1,0 +1,22 @@
+.landingPage {
+    width: 100%;
+    min-height: 75vh;
+    background-image: url('houseimage.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background-color: #6A687A;
+    padding: 1px 0px;
+}
+
+.banner h2 {
+    font-family: 'Karla', sans-serif;
+    color: white;
+    font-size: 20px;
+}

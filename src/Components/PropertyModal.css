@@ -1,0 +1,27 @@
+html, body {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden;
+    scroll-behavior: smooth;
+    
+}
+
+h4 {
+    color: #6A687A
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #B25C0E;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7c3f06;
+  }
