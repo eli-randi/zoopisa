@@ -1,6 +1,13 @@
 import { createContext, useState, useContext } from "react";
 import { Box, Button, Modal, Typography } from "@mui/material";
 
+export function fakeAPIRequest(value) {
+  return new Promise(function(resolve) {
+    console.log('fake API')
+      setTimeout(resolve, 1000, value);
+  });
+}
+
 export let ErrorContext = createContext(null) 
 
 const style = {
@@ -31,7 +38,10 @@ export function ErrorProvider(props) {
 export default function ErrorModal() {
     let errors = useContext(ErrorContext);
 
-    const handleClose = () => errors.removeError();
+    const handleClose = () => {
+      errors.removeError();
+    }
+  
 
   return (
     <div>
@@ -48,7 +58,7 @@ export default function ErrorModal() {
           <Typography id="error-description" sx={{ mt: 2 }}>
             Please click here to see the website with example data...
             <Button onClick={() => {
-                // errors.addDummyData();
+                errors.addDummyData();
                 handleClose();
             }}>
                 Click me

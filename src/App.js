@@ -15,7 +15,6 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useLocalStorage } from './util/LocalStorage';
 import ErrorModal, { ErrorContext, ErrorProvider } from './util/Error';
 import { LoadingCircle } from './util/Loading';
-// import { DummySalesData } from './util/DummyData';
 
 const theme = createTheme({
   typography: {
@@ -54,10 +53,6 @@ function Main() {
 
   const errorContext = useContext(ErrorContext)
 
-  // if(errorContext.useDummyData) {
-  //   setPropertyResults(DummySalesData);
-
-  // }
 
   const handleLikedProperty = (property) => {
     if (!likedProperty.includes(property)) {

@@ -1,5 +1,4 @@
-export const DummySalesData = () => {
-    return {
+export const DummySalesData = {
         "country": "England",
         "result_count": 64,
         "longitude": -2.1690175,
@@ -14405,11 +14404,9 @@ export const DummySalesData = () => {
         },
         "postcode": ""
     }
-}
 
 
-export const DummyAutocompleteData = () => {
-    return {
+export const DummyAutocompleteData = {
         "area_name": "",
         "street": "",
         "suggestions": [
@@ -14458,4 +14455,4 @@ export const DummyAutocompleteData = () => {
         "town": "",
         "postcode": ""
     }
-}
+
