@@ -2,9 +2,6 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import MapMarker from './MapMarkers';
 
-// https://www.npmjs.com/package/google-map-react
-
-
 const GoogleAPIKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
 function kFormatter(num) {

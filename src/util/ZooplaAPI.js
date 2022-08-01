@@ -6,13 +6,12 @@ function getFromZoopla(path, errorContext) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'zoopla.p.rapidapi.com',
-            'X-RapidAPI-Key': '891d444976msh34ff20d47fbaa31p1f82b9jsn9acd122c97c3'
+            'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_API_KEY
         }
     };
     return fetch(`https://zoopla.p.rapidapi.com/${path}`, options)
     .then(response => response.json())
     .catch(_ => {
-        console.log(errorContext.isError)
         errorContext.addError()
     });
 }
@@ -28,7 +27,6 @@ export function ZooplaSalesList (autocompleteResult, errorContext) {
 export function ZooplaAutocomplete (searchTerm, errorContext) {
     if(errorContext.useDummyData) {
         return fakeAPIRequest(DummyAutocompleteData).then((resp) => {
-            console.log(resp)
             return resp;
         })
     }

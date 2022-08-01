@@ -3,7 +3,6 @@ import { Box, Button, Modal, Typography } from "@mui/material";
 
 export function fakeAPIRequest(value) {
   return new Promise(function(resolve) {
-    console.log('fake API')
       setTimeout(resolve, 1000, value);
   });
 }

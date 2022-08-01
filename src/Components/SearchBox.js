@@ -22,7 +22,6 @@ export function SearchBox(props) {
                     ZooplaAutocomplete(inputValue, errorContext).then(
                         (data) => {
                             setOptions(data && data.suggestions || [])
-                            console.log('making request')
                         }
                     )
                 }
