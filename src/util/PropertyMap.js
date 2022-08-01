@@ -5,7 +5,7 @@ import MapMarker from './MapMarkers';
 // https://www.npmjs.com/package/google-map-react
 
 
-const GoogleAPIKey = 'AIzaSyC_znZ9Y6Q-BiaG70eIBqvPSZ_4AnnNI_g';
+const GoogleAPIKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
 function kFormatter(num) {
   return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
