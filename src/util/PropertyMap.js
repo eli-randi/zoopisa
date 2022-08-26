@@ -1,11 +1,12 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
+
 import MapMarker from './MapMarkers';
 
 const GoogleAPIKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
 function kFormatter(num) {
-  return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+  return Math.abs(num) > 999 ? Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1)) + 'k' : Math.sign(num) * Math.abs(num)
 }
 
 function PropertyMap(props) {
@@ -34,26 +35,22 @@ function PropertyMap(props) {
           isHovered={house.listing_id === props.propertyHovered}
           onHover={() => props.setPropertyHovered(house.listing_id)}
           onUnHover={() => props.setPropertyHovered(null)}
-          onClick ={() => props.setSelectedProperty(house)}
+          onClick={() => props.setSelectedProperty(house)}
         />
       }
     )
-
-    return result
-    
+    return result;
   }
 
-
-
-  return (  
-      <GoogleMapReact sx={{width:'100%', height:'100%'}}
-        bootstrapURLKeys={{ key: GoogleAPIKey }}
-        defaultCenter={defaultProps.center}
-        center={props.center}
-        defaultZoom={defaultProps.zoom}
-      >
-        {ShowMapMarkers()}
-      </GoogleMapReact>
+  return (
+    <GoogleMapReact sx={{ width: '100%', height: '100%' }}
+      bootstrapURLKeys={{ key: GoogleAPIKey }}
+      defaultCenter={defaultProps.center}
+      center={props.center}
+      defaultZoom={defaultProps.zoom}
+    >
+      {ShowMapMarkers()}
+    </GoogleMapReact>
   );
 }
 

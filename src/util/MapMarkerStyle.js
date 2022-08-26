@@ -18,4 +18,4 @@ const MapMarkerStyle = {
   padding: 3
 };
 
-export {MapMarkerStyle};
+export { MapMarkerStyle };

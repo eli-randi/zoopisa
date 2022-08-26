@@ -1,0 +1,6 @@
+.PropertyList {
+  height: 72vh;
+  flex-grow: 1;
+  overflow: auto;
+  background-color: #DADAE0;
+}

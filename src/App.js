@@ -1,20 +1,22 @@
-import { AppBar } from './Components/AppBar';
-import { ZooplaSalesList } from './util/ZooplaAPI';
 import React, { useState, useContext } from 'react';
-import PropertyMap from './util/PropertyMap';
-import { SearchBox } from './Components/SearchBox';
-import { LandingPage } from './Components/LandingPage';
-import { PropertyList } from './Components/PropertiesList';
-import PropertyModal from './Components/PropertyModal';
 import { Grid } from '@mui/material';
-import './App.css'
 import { ThemeProvider } from '@emotion/react';
 import { createTheme } from '@mui/material';
 import Fab from '@mui/material/Fab';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+
+import { AppBar } from './Components/AppBar/AppBar';
+import PropertyMap from './util/PropertyMap';
+import { SearchBox } from './Components/SearchBar/SearchBox';
+import { LandingPage } from './Components/LandingPage/LandingPage';
+import { PropertyList } from './Components/Property/PropertiesList';
+import PropertyModal from './Components/Property/PropertyModal';
+import { ZooplaSalesList } from './util/ZooplaAPI';
 import { useLocalStorage } from './util/LocalStorage';
 import ErrorModal, { ErrorContext, ErrorProvider } from './util/Error';
 import { LoadingCircle } from './util/Loading';
+
+import './App.css';
 
 const theme = createTheme({
   typography: {
@@ -33,7 +35,6 @@ const theme = createTheme({
       main: '#D77926',
       dark: '#B25C0E'
     }
-
   }
 });
 
@@ -52,7 +53,6 @@ function Main() {
   const [isLoading, setIsLoading] = useState(false);
 
   const errorContext = useContext(ErrorContext)
-
 
   const handleLikedProperty = (property) => {
     if (!likedProperty.includes(property)) {
@@ -95,7 +95,7 @@ function Main() {
           lng: properties.longitude
         }
       );
-      
+
     })
   }
 
@@ -110,7 +110,6 @@ function Main() {
   function handleFavoriteButton() {
     setOpenFavorites(!openFavorites)
   }
-
 
   function ShowFavouriteHouses() {
     if (likedProperty.length === 0) {
@@ -161,19 +160,19 @@ function Main() {
 
               </Grid>
               <Grid item xs={6} >
-                {isLoading ? <LoadingCircle /> : 
-                <>
-                <PropertyList
-                  key={propertiesToRender && propertiesToRender.listing_id}
-                  propertiesToList={propertiesToRender}
-                  setPropertyHovered={setPropertyHovered}
-                  setSelectedProperty={setSelectedProperty}
-                  setLikedProperty={handleLikedProperty}
-                  likedProperty={likedProperty}
-                  openFavorites={openFavorites}
-                />
-                <ShowFavouriteHouses />
-                </>
+                {isLoading ? <LoadingCircle /> :
+                  <>
+                    <PropertyList
+                      key={propertiesToRender && propertiesToRender.listing_id}
+                      propertiesToList={propertiesToRender}
+                      setPropertyHovered={setPropertyHovered}
+                      setSelectedProperty={setSelectedProperty}
+                      setLikedProperty={handleLikedProperty}
+                      likedProperty={likedProperty}
+                      openFavorites={openFavorites}
+                    />
+                    <ShowFavouriteHouses />
+                  </>
                 }
 
               </Grid>
@@ -190,7 +189,6 @@ function Main() {
           <LandingPage />}
       </Grid>
     </Grid>
-
   );
 }
 
@@ -209,7 +207,6 @@ function App() {
         <ErrorModal />
       </ErrorProvider>
     </div>
-
   );
 }
 

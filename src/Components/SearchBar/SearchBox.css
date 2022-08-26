@@ -1,0 +1,16 @@
+.SearchBoxOutline {
+  margin: 2% 0% 3% 0%;
+  width: 100%;
+  height: 5%;
+}
+
+.SearchBoxMain {
+  height: 70%;
+  border-radius: 25px;
+  border: 2px solid #6A687A;
+  padding: 15px 10px;
+  margin: 0% 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
